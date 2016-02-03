@@ -15,26 +15,75 @@ var _ = { };
 
   // Return an array of the first n elements of an array. If n is undefined,
   // return just the first element.
+
   _.first = function(array, n) {
+    var newArr = [];
+    if (n == undefined){
+      return array[0];
+    }
+    else {
+    for (var n = 0; i < array[n] ; i++){
+      newArr.push(array[i]);
+    }
+  }
+  return newArr;
   };
 
-  // Like first, but for the last elements. If n is undefined, return just the
+
+
+  //Like first, but for the last elements. If n is undefined, return just the
   // last element.
+
+
+
+/*
   _.last = function(array, n) {
-  };
+    var newArr = [];
+    var last = array.length;
+    if (n == undefined){
+      return array[last];
+    }
+    else {
+      for (var i = last; i => array[n]; i--){
+        newArr.push(array[i]);
+    }
+    }
+    return newArr;
+  }*/
 
   // Call iterator(value, key, collection) for each element of collection.
   // Accepts both arrays and objects.
   _.each = function(collection, iterator) {
+    for (var i = 0; i < collection.length; i++) {
+      return iterator.push(collection[i], i, collection);
+    }
   };
 
   // Returns the index at which value can be found in the array, or -1 if value
   // is not present in the array.
   _.indexOf = function(array, target){
+    var x = array.indexOf(target);
+    if (x !== -1) {
+      return x;
+    }
+    else {
+      return -1;
+    }
   };
 
   // Return all elements of an array that pass a truth test.
   _.filter = function(collection, iterator) {
+    var evens = [];
+    var odds = [];
+    for (var i = 0; i<collection.length; i++){
+      if(collection[i] % 2 === 0 ) {
+        evens.push(collection[i]);
+      }
+      else {
+        odds.push(collection[i]);
+      }
+    }
+    return evens;
   };
 
   // Return all elements of an array that don't pass a truth test.
